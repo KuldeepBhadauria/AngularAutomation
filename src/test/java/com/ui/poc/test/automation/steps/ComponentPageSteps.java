@@ -1,11 +1,10 @@
 package com.ui.poc.test.automation.steps;
 
-import org.junit.Assert;
 
+import org.junit.Assert;
 import com.ui.poc.test.automation.config.ConfigProvider;
 import com.ui.poc.test.automation.pages.CommonPage;
 import com.ui.poc.test.automation.pages.ComponentPage;
-
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -68,6 +67,9 @@ public class ComponentPageSteps {
 				actualHeaderText.contains(expectedHeaderText));
 		
 	}
+	
+
+	
 
 	
 }

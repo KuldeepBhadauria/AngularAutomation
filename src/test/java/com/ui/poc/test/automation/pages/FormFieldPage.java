@@ -7,6 +7,7 @@ import com.ui.poc.test.automation.utils.WebdriverComponents;
 public class FormFieldPage {
 	
 	   WebdriverComponents webdriverComponents = new WebdriverComponents();
+	   CommonPage commonPage = new CommonPage();
 		
 	    private By inputTxtBox = By.xpath("(//input[contains(@id,'mat-input')])[1]");
 	    private By drpDownArrow = By.xpath("(//div[contains(@id,'mat-select-value')]//following-sibling::div//div)[1]");
@@ -35,6 +36,16 @@ public class FormFieldPage {
 
 		public String getPageUrl() {
 			return webdriverComponents.getCurrentUrl();
+		}
+		
+		public void fillFormData(String text, String dropDownValueToSelect, String textAreaText) throws Exception {
+			commonPage.waitForElementToBeInteractable();
+			enterInputText(text);
+			commonPage.waitForElementToBeInteractable();
+			selectDropDownValue(dropDownValueToSelect);
+			commonPage.waitForElementToBeInteractable();
+			enterTextInTextArea(textAreaText);
+			
 		}
 
 }
