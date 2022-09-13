@@ -53,7 +53,9 @@ public class FormFieldPageSteps {
 	
 	@When("User fills the field form component field from sheet name {string} and row number {int}")
 	public void fillFormDataBasedOnSheetNameAndRowNum(String sheetName, int rowNumber) throws Exception {
-		List <Map<String,String>> inputData = dataReader.getData(currentWorkingDirectory + "/src/test/resources/testData/AutomationTestData.xlsx", sheetName);
+		//List <Map<String,String>> inputData = dataReader.getData(currentWorkingDirectory + "/src/test/resources/testData/AutomationTestData.xlsx", sheetName);
+		List <Map<String,String>> inputData = dataReader.getData("C:/Users/Dell/Desktop/AutomationTestData.xlsx", sheetName);
+		
 		String inputText = inputData.get(rowNumber).get("InputFieldValue");
 		String dropDownValue = inputData.get(rowNumber).get("DropDownValue");
 		String textAreaTextext = inputData.get(rowNumber).get("TextAreaText");
